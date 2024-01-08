@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+import './App.css';
+import { Form } from './components/Form';
+import { data } from './data/data';
 
 function App() {
-  const [count, setCount] = useState(0)
+    // console.log(data);
 
-  return (
-    <>
-      
-    </>
-  )
+    return (
+        <div className='main-wrapper'>
+            <Form />
+        </div>
+    );
 }
 
-export default App
+export default App;

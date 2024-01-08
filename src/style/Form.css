@@ -1,0 +1,41 @@
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-right: 20px;
+}
+
+.text {
+    height: 25px;
+    border-radius: 5px;
+}
+
+/* .text:hover {
+    background-color: rgba(220, 237, 192, 0.977);
+} */
+
+.btn-box {
+    display: flex;
+    align-items: flex-end;
+    /* text-align: center; */
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background-color: gray;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    /* display: table-cell; */
+    vertical-align: middle;
+}
+
+.save {
+    margin-right: 20px;
+}

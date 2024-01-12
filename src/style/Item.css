@@ -1,0 +1,14 @@
+.item {
+    display: flex;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.item-text {
+    margin-right: 20px;
+}
+
+.btn-change, .btn-delet {
+    margin-right: 20px;
+    height: 30px;
+}

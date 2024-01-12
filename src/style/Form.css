@@ -13,27 +13,32 @@
 .text {
     height: 25px;
     border-radius: 5px;
+    background-color: rgb(249, 245, 245);
 }
 
-/* .text:hover {
-    background-color: rgba(220, 237, 192, 0.977);
-} */
+.text:focus {
+    background-color: white;
+}
 
 .btn-box {
     display: flex;
     align-items: flex-end;
-    /* text-align: center; */
 }
 
 .btn {
     width: 100px;
     height: 30px;
-    background-color: gray;
+    background-color: rgb(79, 77, 77);
     color: white;
     margin: 0 auto;
     padding: 0;
     /* display: table-cell; */
     vertical-align: middle;
+}
+
+.btn:hover {
+    background-color: rgb(101, 100, 100);
+    border: none;
 }
 
 .save {

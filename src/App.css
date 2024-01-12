@@ -42,8 +42,11 @@
 }
 
 .main-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 800px;
   min-height: 300px;
-  background-color: darkcyan;
+  background-color: rgb(227, 223, 223);
   padding: 10px;
+  border-radius: 5px;
 }

@@ -1,15 +1,21 @@
-// import { useState } from 'react'
+import React, { useReducer } from 'react';
 import './App.css';
 import { Form } from './components/Form';
+import { Items } from './components/Items';
 import { data } from './data/data';
+import Context from './Context';
+import reducer from './components/Reducer';
 
 function App() {
-    // console.log(data);
+    const [state, dispatch] = useReducer(reducer, data);
 
     return (
-        <div className='main-wrapper'>
-            <Form />
-        </div>
+        <Context.Provider value={{ state, dispatch }}>
+            <div className='main-wrapper'>
+                <Form />
+                <Items />
+            </div>
+        </Context.Provider>
     );
 }
 

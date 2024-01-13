@@ -1,8 +1,9 @@
-# React + Vite
+# Редактирование
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект не предполагает взаимодействия по протоколу HTTP и наличия серверной части.
 
-Currently, two official plugins are available:
+Взяв за основу проект, рассмотренный на лекции, доработайте его либо напишите с нуля:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. По умолчанию показывается форма добавления, при заполнении и нажатии на кнопку Save происходит добавление элемента в список:
+
+

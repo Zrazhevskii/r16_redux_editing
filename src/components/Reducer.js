@@ -1,5 +1,3 @@
-// import { v4 us uuid} from 'uuid'
-
 export default function reducer(state, action) {
     switch (action.type) {
         case 'add': {
@@ -10,7 +8,7 @@ export default function reducer(state, action) {
                 {
                     id: crypto.randomUUID(),
                     action: text.actionValue,
-                    price: text.priseValue,
+                    price: parseInt(text.priseValue),
                 },
             ];
         }
@@ -32,7 +30,6 @@ export default function reducer(state, action) {
                       }
                     : elem
             );
-            // console.log(id, actionValue)
         }
     }
 }

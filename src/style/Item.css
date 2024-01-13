@@ -6,9 +6,13 @@
 
 .item-text {
     margin-right: 20px;
+    margin-top: 10px;
 }
 
-.btn-change, .btn-delet {
+.btn-change,
+.btn-delet {
     margin-right: 20px;
-    height: 30px;
+    height: 40px;
+    /* vertical-align: middle; */
+    top: 0;
 }

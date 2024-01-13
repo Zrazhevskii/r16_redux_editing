@@ -1,6 +1,6 @@
 export const data = [
     {
-        id:'1',
+        id: '1',
         action: 'Замена стекла',
         price: 21000,
     },
@@ -18,5 +18,5 @@ export const data = [
         id: '4',
         action: 'Замена микрофона',
         price: 2500,
-    }
-]
+    },
+];

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import '../style/Item.css';
 import Context from '../Context';
+import PropTypes from 'prop-types';
 
-export const Item = ({data, handleUpdateItem}) => {
+export const Item = ({ data, handleUpdateItem }) => {
     const { dispatch } = useContext(Context);
     const { id, action, price } = data;
-
-    // console.log(handleUpdateItem)
 
     const handleDelet = (id) => {
         dispatch({ type: 'delet', payload: id });
@@ -17,7 +16,10 @@ export const Item = ({data, handleUpdateItem}) => {
             <li className='item-text'>
                 {action} {price}
             </li>
-            <button className='btn-change' onClick={() => handleUpdateItem(id, action, price)}>
+            <button
+                className='btn-change'
+                onClick={() => handleUpdateItem(id, action, price)}
+            >
                 ✎
             </button>
             <button className='btn-delet' onClick={() => handleDelet(id)}>
@@ -25,4 +27,13 @@ export const Item = ({data, handleUpdateItem}) => {
             </button>
         </div>
     );
+};
+
+Item.propTypes = {
+    handleUpdateItem: PropTypes.func.isRequired,
+    data: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        action: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+    }),
 };

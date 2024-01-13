@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import Context from '../Context';
 import { Item } from './Item';
+import PropTypes from 'prop-types';
 
 export const Items = ({ handleUpdateItem }) => {
     const { state } = useContext(Context);
-
-    // console.log(handleUpdateItem)
 
     if (!state) return;
 
@@ -24,4 +23,8 @@ export const Items = ({ handleUpdateItem }) => {
             </ul>
         </div>
     );
+};
+
+Items.propTypes = {
+    handleUpdateItem: PropTypes.func.isRequired,
 };

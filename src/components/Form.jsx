@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Items } from './Items';
 import '../style/Form.css';
 import Context from '../Context';
@@ -26,10 +26,12 @@ export const Form = () => {
 
     const handleClick = () => {
         if (formValue.id === '') {
-            return dispatch({ type: 'add', payload: { actionValue, priseValue } });
+            return dispatch({
+                type: 'add',
+                payload: { actionValue, priseValue },
+            });
         }
-        dispatch({type: 'update', payload: { id, actionValue, priseValue } })
-        // console.log(id)
+        dispatch({ type: 'update', payload: { id, actionValue, priseValue } });
     };
 
     const handleChangeForm = (e) => {
@@ -40,7 +42,6 @@ export const Form = () => {
     };
 
     const handleUpdateItem = (id, action, price) => {
-        // console.log(id)
         setForm({
             id: id,
             actionValue: action,
@@ -84,7 +85,7 @@ export const Form = () => {
                     <button className='btn cansel'>Cansel</button>
                 </div>
             </form>
-            <Items handleUpdateItem={handleUpdateItem}/>
+            <Items handleUpdateItem={handleUpdateItem} />
         </div>
     );
 };

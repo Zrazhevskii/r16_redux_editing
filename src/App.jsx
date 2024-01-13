@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 import './App.css';
 import { Form } from './components/Form';
 import { data } from './data/data';

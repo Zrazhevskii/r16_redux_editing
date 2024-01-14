@@ -6,4 +6,4 @@
 
 1. По умолчанию показывается форма добавления, при заполнении и нажатии на кнопку Save происходит добавление элемента в список:
 
-[first-picture](https://github.com/Zrazhevskii/r16_redux_editing/blob/main/src/assets/add.png)
+![first-picture](https://github.com/Zrazhevskii/r16_redux_editing/blob/main/src/assets/add.png)

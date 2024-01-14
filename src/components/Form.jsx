@@ -51,38 +51,44 @@ export const Form = () => {
 
     return (
         <div>
-            <form action='' className='form' onSubmit={handleSubmit}>
-                <div className='input action'>
-                    <label htmlFor='action'>Мероприятие</label>
-                    <input
-                        type='text'
-                        id='action'
-                        className='text'
-                        placeholder='текст того, что надо сделать'
-                        name='actionValue'
-                        value={actionValue}
-                        onChange={handleChangeForm}
-                        required
-                    />
+            <form action='' className='form-wrapper' onSubmit={handleSubmit}>
+                <div className='form-input'>
+                    <div className='input action'>
+                        <label htmlFor='action'>Мероприятие</label>
+                        <input
+                            type='text'
+                            id='action'
+                            className='text'
+                            placeholder='текст того, что надо сделать'
+                            name='actionValue'
+                            value={actionValue}
+                            onChange={handleChangeForm}
+                            required
+                        />
+                    </div>
+                    <div className='input prise'>
+                        <label htmlFor='prise'>Сколько стоит</label>
+                        <input
+                            type='text'
+                            id='prise'
+                            className='text'
+                            placeholder='тут самое важно, что бьет по карману'
+                            name='priseValue'
+                            value={priseValue}
+                            onChange={handleChangeForm}
+                            required
+                        />
+                    </div>
+                    <div className='btn-box'>
+                        <button className='btn save' onClick={handleClick}>
+                            Save
+                        </button>
+                        <button className='btn cansel'>Cansel</button>
+                    </div>
                 </div>
-                <div className='input prise'>
-                    <label htmlFor='prise'>Сколько стоит</label>
-                    <input
-                        type='text'
-                        id='prise'
-                        className='text'
-                        placeholder='тут самое важно, что бьет по карману'
-                        name='priseValue'
-                        value={priseValue}
-                        onChange={handleChangeForm}
-                        required
-                    />
-                </div>
-                <div className='btn-box'>
-                    <button className='btn save' onClick={handleClick}>
-                        Save
-                    </button>
-                    <button className='btn cansel'>Cansel</button>
+                <div className='form-filter'>
+                    <input type='text' className='filter' placeholder='поиск по словам'/>
+                    <button className='btn-filter'>Найти</button>
                 </div>
             </form>
             <Items handleUpdateItem={handleUpdateItem} />

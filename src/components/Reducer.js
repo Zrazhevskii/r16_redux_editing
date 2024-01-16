@@ -1,4 +1,5 @@
 export default function reducer(state, action) {
+
     switch (action.type) {
         case 'add': {
             const { ...text } = action.payload;
@@ -31,5 +32,30 @@ export default function reducer(state, action) {
                     : elem
             );
         }
+
+        case 'filter': {
+            const text = action.payload;
+            // let filterData = [];
+
+            state.map((elem) => {
+                elem.action.split(' ').map((item) => {
+                    if (
+                        item.toLowerCase().slice(0, 3) ===
+                        text.toLowerCase().slice(0, 3)
+                    ) {
+                        filterData.push(elem);
+                    }
+                });
+            });
+
+            return filterData;
+        }
+
+        case 'show': {
+            return action.payload
+        }
+
+        default:
+            return state;
     }
 }

@@ -1,7 +1,8 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Items } from './Items';
 import '../style/Form.css';
 import Context from '../Context';
+
 
 export const Form = () => {
     const [formValue, setForm] = useState({
@@ -9,6 +10,8 @@ export const Form = () => {
         actionValue: '',
         priseValue: '',
     });
+
+    const [valueFilter, setFilter] = useState('');
 
     const { dispatch } = useContext(Context);
 
@@ -49,6 +52,21 @@ export const Form = () => {
         });
     };
 
+    const handleFilter = (e) => {
+        setFilter(e.target.value);
+    };
+
+    const handleBtnSearch = (text) => {
+        dispatch({ type: 'filter', payload: text });
+    };
+    
+    useEffect(() => {
+        if (valueFilter === '') {
+            dispatch({ type: 'show', payload: data})
+        }
+
+    }, [valueFilter])
+
     return (
         <div>
             <form action='' className='form-wrapper' onSubmit={handleSubmit}>
@@ -63,7 +81,6 @@ export const Form = () => {
                             name='actionValue'
                             value={actionValue}
                             onChange={handleChangeForm}
-                            required
                         />
                     </div>
                     <div className='input prise'>
@@ -76,7 +93,6 @@ export const Form = () => {
                             name='priseValue'
                             value={priseValue}
                             onChange={handleChangeForm}
-                            required
                         />
                     </div>
                     <div className='btn-box'>
@@ -87,8 +103,17 @@ export const Form = () => {
                     </div>
                 </div>
                 <div className='form-filter'>
-                    <input type='text' className='filter' placeholder='поиск по словам'/>
-                    <button className='btn-filter'>Найти</button>
+                    <input
+                        type='text'
+                        className='filter'
+                        placeholder='поиск по словам'
+                        name='valueFilter'
+                        value={valueFilter}
+                        onChange={handleFilter}
+                    />
+                    <button className='btn-filter' onClick={() => handleBtnSearch(valueFilter)}>
+                        Найти
+                    </button>
                 </div>
             </form>
             <Items handleUpdateItem={handleUpdateItem} />
